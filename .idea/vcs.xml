@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/src/abc_swarm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/rosserial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/teleop_twist_keyboard" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/tianbot_mini" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/tianbot_mini_description" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/tianbot_mini_gazebo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ydlidar_ros" vcs="Git" />
+  </component>
+</project>

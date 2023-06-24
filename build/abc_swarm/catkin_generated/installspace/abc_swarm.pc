@@ -1,0 +1,8 @@
+prefix=/home/tianbot/sslee_ws/install
+
+Name: abc_swarm
+Description: Description of abc_swarm
+Version: 0.1.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

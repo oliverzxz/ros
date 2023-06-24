@@ -1,0 +1,12 @@
+\subsubsection usage Usage
+\verbatim
+<node name="abc_swarm" pkg="abc_swarm" type="abc_swarm">
+  <param name="linear_kp" type="double" value="1.0" />
+  <param name="linear_ki" type="double" value="0.0" />
+  <param name="linear_kd" type="double" value="0.0" />
+  <param name="angular_kp" type="double" value="1.0" />
+  <param name="angular_ki" type="double" value="0.0" />
+  <param name="angular_kd" type="double" value="0.0" />
+</node>
+\endverbatim
+

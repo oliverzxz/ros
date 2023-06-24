@@ -1,0 +1,8 @@
+prefix=/home/tianbot/sslee_ws/install
+
+Name: tianbot_mini
+Description: Description of tianbot_mini
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

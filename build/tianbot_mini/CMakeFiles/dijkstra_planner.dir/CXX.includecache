@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tianbot/sslee_ws/src/tianbot_mini/dijkstra_planner.cpp
+ros/ros.h
+-
+sensor_msgs/LaserScan.h
+-
+geometry_msgs/Twist.h
+-
+vector
+-
+queue
+-
+

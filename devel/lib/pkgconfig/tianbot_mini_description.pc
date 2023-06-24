@@ -1,0 +1,8 @@
+prefix=/home/tianbot/sslee_ws/devel
+
+Name: tianbot_mini_description
+Description: Description of tianbot_mini_description
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

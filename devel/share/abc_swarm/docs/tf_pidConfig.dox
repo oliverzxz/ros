@@ -1,0 +1,11 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~linear_kp" : \b [double] kp for linear min: -100.0, default: 1.0, max: 100.0
+- \b "~linear_ki" : \b [double] ki for linear min: -100.0, default: 0.0, max: 100.0
+- \b "~linear_kd" : \b [double] kd for linear min: -100.0, default: 0.0, max: 100.0
+- \b "~angular_kp" : \b [double] kp for angular min: -100.0, default: 1.0, max: 100.0
+- \b "~angular_ki" : \b [double] ki for angular min: -100.0, default: 0.0, max: 100.0
+- \b "~angular_kd" : \b [double] kd for angular min: -100.0, default: 0.0, max: 100.0
+
