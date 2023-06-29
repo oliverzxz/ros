@@ -1,0 +1,3 @@
+[submodule "tianbot_mini"]
+	path = tianbot_mini
+	url = git@github.com:tianbot/tianbot_mini.git
