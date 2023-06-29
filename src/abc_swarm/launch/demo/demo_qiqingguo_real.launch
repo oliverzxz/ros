@@ -1,0 +1,32 @@
+<launch>
+    <arg name="robot_name_1" default="bot1" />
+    <arg name="robot_name_2" default="bot2" /> 
+    <arg name="robot_name_3" default="bot3" /> 
+    <arg name="front_distance" default = "0.15" />
+
+    <include file="$(find tianbot_mini)/launch/bringup.launch" >
+        <arg name="robot_name" value="$(arg robot_name_1)" />
+    </include>
+
+    <include file="$(find abc_swarm)/launch/add_robot.launch">
+        <arg name="robot_name" value="$(arg robot_name_2)" />
+    </include>
+
+
+    <node pkg="tf" type="static_transform_publisher" name="world_to_global_1" args="0 0 0 0 0 0 world $(arg robot_name_1)/odom 20" />
+    <node pkg="tf" type="static_transform_publisher" name="world_to_global_2" args="-0.45 0 0 0 0 0 world $(arg robot_name_2)/odom 20" />
+    <node pkg="tf" type="static_transform_publisher" name="world_to_global_3" args="-0.5 0 0 0 0 0 world $(arg robot_name_3)/odom 20" />
+    <node pkg="tf" type="static_transform_publisher" name="robot_2_front" args="$(arg front_distance) 0 0 0 0 0 $(arg robot_name_2)/base_link $(arg robot_name_2)/front 20" />
+    <node pkg="tf" type="static_transform_publisher" name="robot_3_front" args="$(arg front_distance) 0 0 0 0 0 $(arg robot_name_3)/base_link $(arg robot_name_3)/front 20" />
+
+    <node pkg="abc_swarm" type="simple_leader_follower.py" name="robot_2_follower" output="screen">
+        <param name="leader_robot_name" value="$(arg robot_name_1)" />
+        <param name="follower_robot_name" value="$(arg robot_name_2)" />
+        <param name="expected_distance" value="0.3" />
+        <param name="expected_theta" value="$(eval 3.14159 * 3 /3)" />
+        <param name="front_distance" value="$(arg front_distance)" />
+    </node>
+
+    <!-- RVIZ可视化调试工具 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find abc_swarm)/rviz/demo_qiqingguo.rviz" />
+</launch>

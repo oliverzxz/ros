@@ -1,0 +1,48 @@
+<launch>
+  <arg name="robot_name_1" default="tianbot_mini" />
+  <arg name="robot_name_2" default="bot1" /> 
+  <arg name="robot_name_3" default="bot2" /> 
+
+  <include file="$(find tianbot_mini)/launch/bringup.launch" >
+    <arg name="robot_name" value="$(arg robot_name_1)" />
+  </include>
+  <include file="$(find tianbot_mini)/launch/lidar.launch" >
+    <arg name="robot_name" value="$(arg robot_name_1)" />
+    <arg name="port" value="/dev/ttyUSB0" />
+  </include>
+	<include file="$(find tianbot_mini)/launch/slam.launch" >
+    <arg name="robot_name" value="$(arg robot_name_1)" />
+  </include>
+
+  <include file="$(find abc_swarm)/launch/add_robot.launch">
+    <arg name="robot_name" value="$(arg robot_name_2)" />
+  </include>
+  <include file="$(find tianbot_mini)/launch/lidar.launch" >
+    <arg name="robot_name" value="$(arg robot_name_2)" />
+    <arg name="port" value="/dev/ttyUSB1" />
+  </include>
+	<include file="$(find tianbot_mini)/launch/slam.launch" >
+    <arg name="robot_name" value="$(arg robot_name_2)" />
+  </include>
+
+
+  <include file="$(find abc_swarm)/launch/add_robot.launch">
+    <arg name="robot_name" value="$(arg robot_name_3)" />
+  </include>
+  <include file="$(find tianbot_mini)/launch/lidar.launch" >
+    <arg name="robot_name" value="$(arg robot_name_3)" />
+    <arg name="port" value="/dev/ttyUSB2" />
+  </include>
+	<include file="$(find tianbot_mini)/launch/slam.launch" >
+    <arg name="robot_name" value="$(arg robot_name_3)" />
+  </include>
+
+  <!--include file="$(find abc_swarm)/launch/map_merge.launch" -->
+    <!--arg name="robot_name_1" value="$(arg robot_name_1)" /-->
+    <!--arg name="robot_name_2" value="$(arg robot_name_2)" /--> 
+  <!--/include-->
+
+  <node pkg="tf" type="static_transform_publisher" name="world_to_global_1" args="0 0 0 0 0 0 world $(arg robot_name_1)/map 20" />
+  <node pkg="tf" type="static_transform_publisher" name="world_to_global_2" args="0 0 0 0 0 0 world $(arg robot_name_2)/map 20" />
+  <node pkg="tf" type="static_transform_publisher" name="world_to_global_3" args="0 0 0 0 0 0 world $(arg robot_name_3)/map 20" />
+</launch>
