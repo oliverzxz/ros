@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Launch Tianbot Mini bringup -->
+  <include file="$(find tianbot_mini)/launch/bringup.launch" />
+
+  <!-- Launch Tianbot Mini lidar -->
+  <!--include file="$(find tianbot_mini)/launch/lidar.launch" /-->
+
+  <!-- Launch Tianbot Mini slam -->
+  <!--include file="$(find tianbot_mini)/launch/slam.launch" /-->
+
+  <!-- Launch Tianbot Mini teleop -->
+  <!--include file="$(find tianbot_mini)/launch/teleop.launch" /-->
+
+  <!-- Launch obstacle_avoidance node -->
+  <node name="move_forward" type="move_forward.py" pkg="tianbot_mini" output="screen" />
+
+</launch>

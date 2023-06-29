@@ -1,0 +1,24 @@
+<launch>
+
+  <!-- Launch Tianbot Mini bringup -->
+  <!--include file="$(find tianbot_mini)/launch/bringup.launch" /-->
+
+  <!-- Launch Tianbot Mini lidar -->
+  <!--include file="$(find tianbot_mini)/launch/lidar.launch" /-->
+
+  <!-- Launch Tianbot Mini slam -->
+  <!--include file="$(find tianbot_mini)/launch/slam.launch" /-->
+
+  <!-- Launch Tianbot Mini teleop -->
+  <!--include file="$(find tianbot_mini)/launch/teleop.launch" /-->
+
+  <!-- Launch get_pos node -->
+  <!--node name="get_pos" type="get_pos.py" pkg="tianbot_mini" output= "screen"/-->
+    
+  <!-- Launch send_goal node -->
+  <node name="send_goal" type="send_goal.py" pkg="tianbot_mini" output="screen" />
+
+  
+
+
+</launch>
